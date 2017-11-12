@@ -1,0 +1,21 @@
+import csv
+import matplotlib
+
+rowlist = []
+environment = []
+f = open('Text.txt', newline='') 
+reader = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
+for row in reader:				# A list of rows
+    rowlist = []
+    #rowlist.append(row)
+    for value in row:				# A list of value
+        print(value) 				# Floats
+        rowlist.append(value)           #add the value to the rowlist
+    environment.append(rowlist)         #add the rowlist to the environment        
+
+f.close() 	# Don't close until you are done with the reader;
+		# the data is read on request.
+#print(rowlist)
+
+matplotlib.pyplot.imshow(environment)
+matplotlib.pyplot.show()
