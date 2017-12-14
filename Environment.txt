@@ -1,5 +1,11 @@
+
+# Imports necessary libraries
+
 import csv
 import matplotlib
+
+# Generates the environment that the agents operate in
+# Opens text file (CSV) and reads in the data contained
 
 rowlist = []
 environment = []
@@ -13,9 +19,14 @@ for row in reader:				# A list of rows
         rowlist.append(value)           #add the value to the rowlist
     environment.append(rowlist)         #add the rowlist to the environment        
 
-f.close() 	# Don't close until you are done with the reader;
-		# the data is read on request.
-#print(rowlist)
+f.close() 	
+
+# the data is read on request
+# print(rowlist)
+
+# Displays environment
 
 matplotlib.pyplot.imshow(environment)
 matplotlib.pyplot.show()
+
+environment = []
