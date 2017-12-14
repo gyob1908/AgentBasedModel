@@ -5,14 +5,20 @@ Created on Wed Sep 20 15:53:59 2017
 @author: oliverbeatson
 """
 
+# Imports all libraries needed for the model
+
 import random
 import operator
 import matplotlib.pyplot
 import agentframework
 import csv
 
+# Defines distance between the agents
+
 def distance_between(agent0, agent1):
     return (((agent0.x - agent1.x)**2) + ((agent0.y - agent1.y)**2))**0.5
+
+# Sets out the number of agents being defined as well as the number of iterations and how big the area in which they will operate is
 
 num_of_agents = 30
 num_of_iterations = 100
@@ -21,6 +27,8 @@ agents = []
 agent = []
 rowlist = []
 environment = []
+
+# Opens text file (CSV) and reads in the data contained
 
 f = open('Text.txt', newline='') 
 reader = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
@@ -32,9 +40,11 @@ for row in reader:				# A list of rows
         rowlist.append(value)           #add the value to the rowlist
     environment.append(rowlist)         #add the rowlist to the environment        
 
-f.close() 	# Don't close until you are done with the reader;
-		# the data is read on request.
+f.close() 	# the data is read on request
+
 #print(rowlist)
+
+# Brings through the plot chart that will show the agents actions
 
 matplotlib.pyplot.imshow(environment)
 matplotlib.pyplot.show()
@@ -50,6 +60,7 @@ for j in range(num_of_iterations):
             agents[i].eat()
             agents[i].share_with_neighbours(neighbourhood)
             
+# Plots the agents on to the environment and displays them
             
 matplotlib.pyplot.xlim(0, 300)
 matplotlib.pyplot.ylim(0, 300)
@@ -65,6 +76,8 @@ for agent0 in agents:
 #print (neighbourhood)     
 print (agents)
 
+# Imports the data from the CSV file
+
 f2 = open('dataout.csv', 'w', newline='') 
 writer = csv.writer(f2, delimiter=',')
 for row in environment:		
@@ -72,6 +85,8 @@ for row in environment:
 f2.close()
 
 storelist=[]
+
+# Saves data into a CSV file
 
 f2 = open('dataout.csv', 'w', newline='') 
 writer = csv.writer(f2, delimiter=',')
