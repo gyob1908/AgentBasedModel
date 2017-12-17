@@ -73,10 +73,11 @@ for agent0 in agents:
     for agent1 in agents:
         distance = distance_between(agent0, agent1)
      
-#print (neighbourhood)     
+#print (neighbourhood)  
+        
 print (agents)
 
-# Imports the data from the CSV file
+# Saves the data relating to the environment into a csv file
 
 f2 = open('dataout.csv', 'w', newline='') 
 writer = csv.writer(f2, delimiter=',')
@@ -86,7 +87,7 @@ f2.close()
 
 storelist=[]
 
-# Saves data into a CSV file
+# Saves data relating to agents into the previously created csv file
 
 f2 = open('dataout.csv', 'w', newline='') 
 writer = csv.writer(f2, delimiter=',')

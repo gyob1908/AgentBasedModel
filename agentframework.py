@@ -6,13 +6,19 @@ Created on Wed Sep 20 15:53:59 2017
 """
 import random
 
+# Defines agent class within the environment
+
 class Agent():
     def __init__(self, environment, agent):
         self.environment = environment
         self.agent = agent
         self.store =0
         self.x = random.randint(0,1000)
-        self.y = random.randint(0,1000)        
+        self.y = random.randint(0,1000)    
+
+# Defines the movement of the agents
+# Coordinates of each agent set to random
+# Also allows agents to leave boundarys but re-enter at oposite boundary
         
     def move (self):
         
@@ -27,16 +33,23 @@ class Agent():
         
         else:
            self.y = (self.y - 1) % 300
+
+# Defines agents to change the environment around them by a factor of ten
+# Represented by change of colour in the immediate surrounding of the environment 
            
     def eat(self): 
         if self.environment[self.y][self.x] > 10:
            self.environment[self.y][self.x] -= 10
            self.store += 10
+
+# Pythagorian equation to define distance between agents
            
     def distance_between(self, agent):
         return (((self.x - agent.x)**2) + ((self.y - agent.y)**2))**0.5        
         
-           
+
+# This section defines an equal sharing of stores previously gained between agents from eat function
+          
     def share_with_neighbours(self, neighbourhood):
      for agent in self.agent:
          dist = self.distance_between(agent) 
