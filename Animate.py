@@ -9,6 +9,8 @@ Created on Sun Nov 12 17:49:28 2017
 # All code derived from practicals given by Andy Evans at the University of Leeds
 # http://www.geog.leeds.ac.uk/courses/computing/study/core-python-phd/
 
+# Imports libraries used for code
+
 import random
 import operator
 import matplotlib.pyplot
@@ -17,6 +19,8 @@ import matplotlib.animation
 num_of_agents = 10
 num_of_iterations = 100
 agents = []
+
+# Generates table for agents to operate in
 
 fig = matplotlib.pyplot.figure(figsize=(7, 7))
 ax = fig.add_axes([0, 0, 1, 1])
