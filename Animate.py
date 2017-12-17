@@ -6,6 +6,9 @@ Created on Sun Nov 12 17:49:28 2017
 @author: oliverbeatson
 """
 
+# All code derived from practicals given by Andy Evans at the University of Leeds
+# http://www.geog.leeds.ac.uk/courses/computing/study/core-python-phd/
+
 import random
 import operator
 import matplotlib.pyplot

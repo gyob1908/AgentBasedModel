@@ -5,6 +5,9 @@ Created on Wed Sep 20 15:53:59 2017
 @author: oliverbeatson
 """
 
+# All code derived from practicals given by Andy Evans at the University of Leeds
+# http://www.geog.leeds.ac.uk/courses/computing/study/core-python-phd/
+
 # Imports all libraries needed for the model
 
 import random
@@ -50,10 +53,12 @@ matplotlib.pyplot.imshow(environment)
 matplotlib.pyplot.show()
 
 # Make the agents.
+
 for i in range(num_of_agents):
     agents.append(agentframework.Agent(environment, agent))
 
 # Move the agents.
+    
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
             agents[i].move()
