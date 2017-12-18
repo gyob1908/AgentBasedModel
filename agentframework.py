@@ -22,7 +22,6 @@ class Agent():
 
 # Defines the movement of the agents
 # Coordinates of each agent set to random
-# Also allows agents to leave boundarys but re-enter at oposite boundary
         
     def move (self):
         
@@ -38,7 +37,7 @@ class Agent():
         else:
            self.y = (self.y - 1) % 300
 
-# Defines agents to change the environment around them by a factor of ten
+# Defines agents to change the environment around them (eat) by a factor of ten
 # Represented by change of colour in the immediate surrounding of the environment 
            
     def eat(self): 
@@ -46,13 +45,14 @@ class Agent():
            self.environment[self.y][self.x] -= 10
            self.store += 10
 
-# Pythagorian equation to define distance between agents
+# Pythagorian equation to set distance between agents
            
     def distance_between(self, agent):
         return (((self.x - agent.x)**2) + ((self.y - agent.y)**2))**0.5        
         
 
-# This section defines an equal sharing of stores previously gained between agents from eat function
+# This section defines an equal sharing of stores previously 
+# gained between agents from eat function
           
     def share_with_neighbours(self, neighbourhood):
      for agent in self.agent:
